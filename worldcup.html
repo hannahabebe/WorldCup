@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>worldcup</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+           <span class="navbar-text">World Cup</span>
+        </div>
+    </nav>
+
+    <div class=" row m-5 mx-auto" style="width: 100%;">
+        <div class="col-sm-3">
+            <form class="bg-dark shadow rounded p-5" onsubmit="return false">
+                <input type="number" placeholder="Roll No." class="form-control mb-2" id="numA">
+                <input type="text" placeholder="Country" class="form-control mb-2" id="countryA">
+                <input type="number" placeholder="Point" class="form-control mb-2" id="ptA">
+                <input type="submit" value="Group A" id="btnA" class="btn btn-dark btn-outline-light" onclick="addA()">
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <form class="bg-dark shadow rounded p-5" onsubmit="return false">
+                <input type="number" placeholder="Roll No." class="form-control mb-2" id="numB">
+                <input type="text" placeholder="Country" class="form-control mb-2" id="countryB">
+                <input type="number" placeholder="Point" class="form-control mb-2" id="ptB">
+                <input type="submit" value="Group B" id="btnB" class="btn btn-dark btn-outline-light" onclick="addB()">
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <form class="bg-dark shadow rounded p-5" onsubmit="return false">
+                <input type="number" placeholder="Roll No." class="form-control mb-2" id="numC">
+                <input type="text" placeholder="Country" class="form-control mb-2" id="countryC">
+                <input type="number" placeholder="Point" class="form-control mb-2" id="ptC">
+                <input type="submit" value="Group C" id="btnC" class="btn btn-dark btn-outline-light" onclick="addC()">
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <form class="bg-dark shadow rounded p-5" onsubmit="return false">
+                <input type="number" placeholder="Roll No." class="form-control mb-2" id="numD">
+                <input type="text" placeholder="Country" class="form-control mb-2" id="countryD">
+                <input type="number" placeholder="Point" class="form-control mb-2" id="ptD">
+                <input type="submit" value="Group D" id="btnD" class="btn btn-dark btn-outline-light" onclick="addD()">
+            </form>
+        </div>
+    </div>
+    <div class="row mx-5">
+        <div class="col-sm-3">
+            <h5 class="heading text-center" style="margin: 50px 0 -40px 0;">GROUP A</h5>
+            
+            <table class="table" style="width: 300px; margin-top:50px;">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Points</th>
+                </tr>
+                </thead>
+                <tbody id="worldcupA">
+                <tr>
+                    <th scope="row"></th>
+                    <td class="gAcountry"></td>
+                    <td class="gApoint"></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="chartbtnA" class=" btn-dark" onclick="chartA()">Generate</button>
+        </div>
+        <div class="col-sm-3">
+            <h5 class="heading text-center" style="margin: 50px 0 -40px 0;">GROUP B</h5>
+            <table class="table" style="width: 300px; margin-top:50px;">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Points</th>
+                </tr>
+                </thead>
+                <tbody id="worldcupB">
+                <tr>
+                    <th scope="row"></th>
+                    <td id="gBcountry"></td>
+                    <td id="gBpoint"></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="chartbtnB" class=" btn-dark" onclick="chartB()">Generate</button>
+        </div>
+        <div class="col-sm-3">
+            <h5 class="heading text-center" style="margin: 50px 0 -40px 0;">GROUP C</h5>
+            <table class="table" style="width: 300px; margin-top:50px;">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Points</th>
+                </tr>
+                </thead>
+                <tbody id="worldcupC">
+                <tr>
+                    <th scope="row"></th>
+                    <td id="gCcountry"></td>
+                    <td id="gCpoint"></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="chartbtnC" class=" btn-dark" onclick="chartC()">Generate</button>
+        </div>
+        <div class="col-sm-3">
+            <h5 class="heading text-center" style="margin: 50px 0 -40px 0;">GROUP D</h5>
+            <table class="table" style="width: 300px; margin-top:50px;">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Points</th>
+                </tr>
+                </thead>
+                <tbody id="worldcupD">
+                <tr>
+                    <th scope="row"></th>
+                    <td id="gDcountry"></td>
+                    <td id="gDPoint"></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="chartbtnD" class=" btn-dark" onclick="chartD()">Generate</button>
+        </div>
+    </div>
+</body>
+
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">WORLD CUP 2022 CHART </p>
+</figure> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</html>
